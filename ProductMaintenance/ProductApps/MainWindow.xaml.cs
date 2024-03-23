@@ -22,7 +22,7 @@ namespace ProductApps
     {
         Product cProduct;
         const int FREIGHT = 25;
-        
+        const int WRAP = 5;
 
         public MainWindow()
         {
@@ -44,7 +44,9 @@ namespace ProductApps
 
             int preFreightCharge = Convert.ToInt16(totalPaymentTextBlock.Text);
             int afterFreightCharge = preFreightCharge + FREIGHT;
+            int afterWrapCharge = afterFreightCharge + WRAP;
             totalChargeTextBox.Text = Convert.ToString(afterFreightCharge);
+            totalChargeWrapTextBox.Text = Convert.ToString(afterWrapCharge);
 
         }
 
