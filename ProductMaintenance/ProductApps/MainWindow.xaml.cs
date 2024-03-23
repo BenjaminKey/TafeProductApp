@@ -21,6 +21,8 @@ namespace ProductApps
     public partial class MainWindow : Window
     {
         Product cProduct;
+        const int FREIGHT = 25;
+        
 
         public MainWindow()
         {
@@ -39,6 +41,11 @@ namespace ProductApps
             {
                 MessageBox.Show("Enter data again", "Data Entry Error");
             }
+
+            int preFreightCharge = Convert.ToInt16(totalPaymentTextBlock.Text);
+            int afterFreightCharge = preFreightCharge + FREIGHT;
+            totalChargeTextBox.Text = Convert.ToString(afterFreightCharge);
+
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
